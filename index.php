@@ -26,6 +26,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header('Location: cardCover.php');
             exit;
         }
+         if ($username === 'halloween_birthday_guest' && $password === 'pumpkin_and_ghosts') {
+            $_SESSION['user_logged_in'] = true;
+            $_SESSION['guest_user'] = 'halloween_birthday_guest';
+            $_SESSION['user_role'] = 'guest';
+
+            header('Location: cardCover.php');
+            exit;
+        }
        
         $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username LIMIT 1");
         $stmt->execute(['username' => $username]);
