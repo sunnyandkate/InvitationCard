@@ -26,7 +26,7 @@
             <strong>Success!</strong> You have chosen the present.
         </div>
     <?php endif; ?>
-        <h1 class="wishlist-heading">Sunnys's Wishlist</h1>
+        <h1 class="wishlist-heading">Sunnys Wishlist</h1>
         <div class="wishlist-container">       
                 <?php foreach ($items as $item): ?>
                     <article class="wishlist-card">
