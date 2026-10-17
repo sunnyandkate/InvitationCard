@@ -13,8 +13,8 @@ The application operates as an open sandbox environment, keeping all functional 
 Because the login form is pre-filled for everyone right on the landing page, you can try out both roles seamlessly:
 
 * **Administrative Role:**
-  * **Username:** `if_level_halloween`
-  * **Password:** `else_pumpkin_display_none`
+  * **Username:** `if_level_is_halloween`
+  * **Password:** `else_hide_the_pumpkins`
   * **System Action:** Logs you in as the manager, revealing the hidden "Chosen Presents" tab in the navigation menu.
 
 * **Standard Guest Role:**
