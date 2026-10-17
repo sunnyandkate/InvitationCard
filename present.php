@@ -10,7 +10,7 @@ include 'includes/header.php';
 
 $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 
-$stmt = $pdo->prepare("SELECT * FROM items WHERE id = :id");
+$stmt = $pdo->prepare("SELECT * FROM wishlist_items WHERE id = :id");
 $stmt->execute(['id' => $id]);
 $item = $stmt->fetch(PDO::FETCH_ASSOC);
 

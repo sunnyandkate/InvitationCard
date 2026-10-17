@@ -13,7 +13,7 @@ if ($id > 0) {
         
         $pdo->beginTransaction();
 
-        $insertSql = "INSERT INTO choosenpresents (id, title, image, link, original_item_id) 
+        $insertSql = "INSERT INTO wishlist_choosenpresents (id, title, image, link, original_item_id) 
                       SELECT id, title, image, link, id
                       FROM items 
                       WHERE id = ?";

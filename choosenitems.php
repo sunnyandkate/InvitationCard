@@ -24,7 +24,7 @@ include __DIR__ . '/includes/header.php';
     <p class="choosen-presents-content">The following items have been selected by guests from the wishlist and have been moved to the choosenpresents table</p>
 
     <?php
-    $stmt = $pdo->query("SELECT * FROM choosenpresents ORDER BY id DESC");
+    $stmt = $pdo->query("SELECT * FROM wishlist_choosenpresents ORDER BY id DESC");
     $chosen_items = $stmt->fetchAll();
     ?>
          <?php if (empty($chosen_items)): ?>

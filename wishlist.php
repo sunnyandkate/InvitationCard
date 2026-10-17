@@ -12,7 +12,7 @@
     include 'includes/header.php'; 
 
     //fetch all items
-    $stmt = $pdo->query("SELECT * FROM items");
+    $stmt = $pdo->query("SELECT * FROM wishlist_items");
     $items = $stmt->fetchAll();
     
 ?>

@@ -26,11 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header('Location: cardCover.php');
             exit;
         }
-<<<<<<< HEAD
         if ($username === 'halloween_birthday_guest' && $password === 'pumpkin_and_ghosts') {
-=======
-         if ($username === 'halloween_birthday_guest' && $password === 'pumpkin_and_ghosts') {
->>>>>>> 47b568146d2346ad78c83955754d5b40fbae7e80
             $_SESSION['user_logged_in'] = true;
             $_SESSION['guest_user'] = 'halloween_birthday_guest';
             $_SESSION['user_role'] = 'guest';
@@ -39,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit;
         }
        
-        $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username LIMIT 1");
+        $stmt = $pdo->prepare("SELECT * FROM wishlist_users WHERE username = :username LIMIT 1");
         $stmt->execute(['username' => $username]);
         $user = $stmt->fetch();
 
