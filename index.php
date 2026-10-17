@@ -18,11 +18,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
 
 
-        if ($username === 'if_level_halloween' && $password === 'else_pumpkin_display_none') {
+        if ($username === 'if_level_is_halloween' && $password === 'else_hide_the_pumpkins') {
             $_SESSION['admin_logged_in'] = true;
             $_SESSION['admin_user'] = 'if_level_halloween';
             $_SESSION['user_role'] = 'admin'; 
             
+            header('Location: cardCover.php');
+            exit;
+        }
+        if ($username === 'halloween_birthday_guest' && $password === 'pumpkin_and_ghosts') {
+            $_SESSION['user_logged_in'] = true;
+            $_SESSION['guest_user'] = 'halloween_birthday_guest';
+            $_SESSION['user_role'] = 'guest';
+
             header('Location: cardCover.php');
             exit;
         }
@@ -33,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($user && password_verify($password, $user['password'])) {
            
-           if ($user['username'] === 'if_level_halloween' || (isset($user['role']) && strtolower($user['role']) === 'admin')) {
+           if ($user['username'] === 'if_level_is_halloween' || (isset($user['role']) && strtolower($user['role']) === 'admin')) {
             $_SESSION['admin_logged_in'] = true;
             $_SESSION['admin_user'] = $user['username'];
         } else {
@@ -80,12 +88,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="form-group">
             <label for="username">Username</label>
             <!--pre filled field:  'admin' -->
-            <input type="text" id="username" name="username" value="if_level_halloween" required>
+            <input type="text" id="username" name="username" value="if_level_is_halloween" required>
         </div>
         <div class="form-group">
             <label for="password">Password</label>
             <!-- pre filled field: guest password -->
-            <input type="password" id="password" name="password" value="else_pumpkin_display_none" required>
+            <input type="password" id="password" name="password" value="else_hide_the_pumpkins" required>
         </div>
 
         <button type="submit" class="login-btn">Log In</button>
